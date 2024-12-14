@@ -88,6 +88,38 @@ Usage: Text on darker backgrounds, or for call-to-action buttons with a green or
     box-sizing: border-box;
     font-family: var(--font-primary);
 }
+#loader{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+}
+#loader img{
+  width: 100px;
+  height: 100px;
+  animation: zoomFadeOut 3s infinite linear;
+}
+
+@keyframes zoomFadeOut {
+  0% {
+    transform: scale(1); /* Normal size */
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    transform: scale(1.1); /* Slight zoom */
+    opacity: 1; /* Still fully visible */
+  }
+  100% {
+    transform: scale(1.1); /* Slight zoom */
+    opacity: 0; /* Fade out completely */
+  }
+}
+
 body.body-scroll-lock{
 overflow: hidden !important;
 }

@@ -95,6 +95,12 @@
     .desk-hero{
         display: none;
     }
+    .hero-background-video {
+        width: 100%;
+        min-height: 85vh;
+    }
+    
+    
     .hero-background-video video{
         height: auto;
     }
