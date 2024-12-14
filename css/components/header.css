@@ -1,0 +1,173 @@
+header {
+    width: 100%;
+    position: fixed;
+    background: #fff;
+    z-index: 99999;
+    top: -100%; /* Initially hidden */
+    transition: top 0.3s ease-in-out; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .header-container .logo img{
+    height: 5.6363rem;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    padding: 1.55rem .5rem;
+  }
+  
+  .nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .nav-list .nav-list-item {
+    margin: 0 .95rem;
+  }
+  
+  /* Additional styles for swipe effect */
+  button.nav-item {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semi-bold);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  button.nav-item a {
+    color: var(--primary-color);
+    font-size: 1rem;
+    letter-spacing: 0.001rem;
+    font-weight: 600;
+    position: relative;
+  }
+  
+  /* Hover effect */
+  button.nav-item .swipe-link {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 1.5em;
+  }
+  
+  button.nav-item .swipe-link span {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  button.nav-item .swipe-link span::before {
+    content: attr(data-hover);
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  button.nav-item:hover .swipe-link span {
+    transform: translateY(-100%);
+  }
+  
+  button.nav-item:hover .swipe-link span::before {
+    color: var(--special-bg-color);
+    top: 100%;
+  }
+  
+  /* Active link style */
+  .nav-list li.active-link a {
+    color: #000;
+    font-weight: 800;
+    font-size: 1.2rem;
+  }
+  
+  /* Section Styling */
+.what-do-we-do {
+    padding: 2rem 6rem;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  .section-header {
+    margin-bottom: 40px;
+  }
+  
+  .section-header h2 {
+    font-size: 2.55rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+  
+  .section-header p {
+    font-size: 1.1rem;
+    color: #777;
+  }
+  
+  /* Services Container Styling */
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Ensures 3 items per row */
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  /* Service Item Styling */
+  .service-item {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    object-fit: contain;
+  }
+  
+  .service-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .service-item p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .services-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .services-container {
+      grid-template-columns: 1fr; /* 1 item per row on small screens */
+    }
+  }
+  
